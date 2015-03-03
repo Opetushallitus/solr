@@ -5,10 +5,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fi.vm.sade.solr</groupId>
-	<artifactId>oph-solr</artifactId>
+	<artifactId>solr</artifactId>
 	<version>9.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>oph-solr</name>
+	<name>solr</name>
 
 	<!-- About libvoikko:  
 	   * 1. haettu koodit https://github.com/KDK-Alli/SolrPlugins/tree/solr4.0

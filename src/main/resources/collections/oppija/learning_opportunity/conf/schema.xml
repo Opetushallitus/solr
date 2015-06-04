@@ -111,6 +111,10 @@
         <!-- tutkintonimike -->
         <field name="degreeTitles_fi" type="string" indexed="false" stored="false" multiValued="true"/>
 
+        <!-- Oppiaineet -->
+        <field name="subject_fi" type="string" indexed="true" stored="true" multiValued="true"/>
+        <field name="subject_sv" type="string" indexed="true" stored="true" multiValued="true"/>
+        <field name="subject_en" type="string" indexed="true" stored="true" multiValued="true"/>
 
         <field name="name_sv" type="string" indexed="false" stored="false" multiValued="false"/>
 		<field name="childName_sv" type="string" indexed="false" stored="false" multiValued="true"/>

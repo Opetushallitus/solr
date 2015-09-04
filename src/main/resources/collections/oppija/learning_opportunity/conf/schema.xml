@@ -19,7 +19,7 @@
 <schema name="tarjontatiedot" version="0.1">
 
     <fields>
-	<!-- for solr cloud -->
+        <!-- for solr cloud -->
         <field name="_version_" type="long" indexed="true" stored="true" multiValued="false"/>
         <!-- non-translated information -->
 
@@ -28,28 +28,29 @@
         <field name="lopId" type="string" indexed="true" stored="true" multiValued="true"/>
         <field name="parentId" type="string" indexed="false" stored="true" multiValued="false"/>
         <field name="losId" type="string" indexed="false" stored="true" multiValued="false"/>
-		
-		<!-- Field for stored string values (e.g. credits_ss) -->
-		<dynamicField name="*_ss" type="string" indexed="false" stored="true" multiValued="false"/>
+
+        <!-- Field for stored string values (e.g. credits_ss) -->
+        <dynamicField name="*_ss" type="string" indexed="false" stored="true" multiValued="false"/>
 
         <dynamicField name="asStart_*"  type="date"  indexed="true"  stored="true"/>
         <dynamicField name="asEnd_*"  type="date"  indexed="true"  stored="true"/>
-		
-		<!-- Fields for faceting -->
-		<dynamicField name="*_ffm" type="string" indexed="true" stored="false" multiValued="true"/>
-		<dynamicField name="*_fname" type="string" indexed="false" stored="true" multiValued="false"/>
-		
-		<!--For sorting -->
-		<dynamicField name="*_dsort"  type="date"  indexed="true"  stored="true" multiValued="false"/>
-		<dynamicField name="*_ssort" type="string" indexed="true" stored="true" multiValued="false"/>
-		<dynamicField name="*_isort" type="int" indexed="true" stored="true" multiValued="false"/>
-		
-		<dynamicField name="*_str_display" type="string" indexed="true" stored="true" multiValued="true"/>
-		
-		<!--Fields for autocomplete -->
-		<dynamicField name="*_auto_fi" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
-		<dynamicField name="*_auto_sv" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
-		<dynamicField name="*_auto_en" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
+        <field name="isVarsinainen" type="boolean" indexed="false" stored="true" multiValued="false"/>
+        
+        <!-- Fields for faceting -->
+        <dynamicField name="*_ffm" type="string" indexed="true" stored="false" multiValued="true"/>
+        <dynamicField name="*_fname" type="string" indexed="false" stored="true" multiValued="false"/>
+        
+        <!--For sorting -->
+        <dynamicField name="*_dsort"  type="date"  indexed="true"  stored="true" multiValued="false"/>
+        <dynamicField name="*_ssort" type="string" indexed="true" stored="true" multiValued="false"/>
+        <dynamicField name="*_isort" type="int" indexed="true" stored="true" multiValued="false"/>
+        
+        <dynamicField name="*_str_display" type="string" indexed="true" stored="true" multiValued="true"/>
+        
+        <!--Fields for autocomplete -->
+        <dynamicField name="*_auto_fi" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
+        <dynamicField name="*_auto_sv" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
+        <dynamicField name="*_auto_en" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
 
         <!-- for filtering -->
         <field name="prerequisites" type="lowercase" indexed="true" stored="false" multiValued="true"/>
@@ -60,7 +61,7 @@
         <field name="lopName" type="string" indexed="false" stored="true" multiValued="true"/>
         <field name="prerequisite" type="string" indexed="false" stored="true" multiValued="false"/>
         <field name="prerequisiteCode" type="string" indexed="false" stored="true" multiValued="false"/>
-		<field name="childName" type="string" indexed="false" stored="true" multiValued="true"/>
+        <field name="childName" type="string" indexed="false" stored="true" multiValued="true"/>
 
         <!-- translated texts -->
         <!-- copy field for normal keywords -->
@@ -69,8 +70,8 @@
         <field name="textBoost_fi" type="text_fi" indexed="true" stored="false" multiValued="true"/>
         <!-- Copy field for whole words -->
         <field name="text_fi_whole" type="text_fi_whole" indexed="true" stored="false" multiValued="true"/>
-	<!-- copy field for whole keywords with increased relevancy value -->
-	<field name="textBoost_fi_whole" type="text_fi_whole" indexed="true" stored="false" multiValued="true"/>
+        <!-- copy field for whole keywords with increased relevancy value -->
+        <field name="textBoost_fi_whole" type="text_fi_whole" indexed="true" stored="false" multiValued="true"/>
         
         <!-- koulutuksen sisältö (opintojen rakenne)-->
         <field name="text_sv" type="text_sv" indexed="true" stored="false" multiValued="true"/>
@@ -80,16 +81,16 @@
         <field name="text_en" type="text_en" indexed="true" stored="false" multiValued="true"/>
         <field name="textBoost_en" type="text_en" indexed="true" stored="false" multiValued="true"/>
         <field name="text_en_whole" type="text_en_whole" indexed="true" stored="false" multiValued="true"/>
-	<field name="textBoost_en_whole" type="text_en_whole" indexed="true" stored="false" multiValued="true"/>
+        <field name="textBoost_en_whole" type="text_en_whole" indexed="true" stored="false" multiValued="true"/>
 
         <!-- hakujen nimet, kaikki kielet, tarkoitettu haun nimellä hakemiseen -->
         <field name="asNames" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
 
-	<field name="lopNames" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
+        <field name="lopNames" type="lowercase_stopwords" indexed="true" stored="false" multiValued="true"/>
 
         <!-- koulutusmoduuli -->
         <field name="name_fi" type="string" indexed="false" stored="false" multiValued="false"/>
-		<field name="childName_fi" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="childName_fi" type="string" indexed="false" stored="false" multiValued="true"/>
         <!-- koulutuksen toteutuksen kuvaus ??? -->
         <!-- hakukohde -->
         <field name="aoName_fi" type="string" indexed="false" stored="false" multiValued="false"/>
@@ -111,13 +112,10 @@
         <!-- tutkintonimike -->
         <field name="degreeTitles_fi" type="string" indexed="false" stored="false" multiValued="true"/>
 
-        <!-- Oppiaineet -->
-        <field name="subject_fi" type="string" indexed="true" stored="true" multiValued="true"/>
-        <field name="subject_sv" type="string" indexed="true" stored="true" multiValued="true"/>
-        <field name="subject_en" type="string" indexed="true" stored="true" multiValued="true"/>
+        <field name="subject_fi" type="string" indexed="false" stored="false" multiValued="true"/>
 
         <field name="name_sv" type="string" indexed="false" stored="false" multiValued="false"/>
-		<field name="childName_sv" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="childName_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="aoName_sv" type="string" indexed="false" stored="false" multiValued="false"/>
         <field name="qualification_sv" type="string" indexed="false" stored="true" multiValued="true"/>
         <field name="goals_sv" type="string" indexed="false" stored="false" multiValued="true"/>
@@ -128,9 +126,10 @@
         <field name="lopAddress_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="asName_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="degreeTitles_sv" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="subject_sv" type="string" indexed="false" stored="false" multiValued="true"/>
 
         <field name="name_en" type="string" indexed="false" stored="false" multiValued="false"/>
-		<field name="childName_en" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="childName_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="aoName_en" type="string" indexed="false" stored="false" multiValued="false"/>
         <field name="qualification_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="goals_en" type="string" indexed="false" stored="false" multiValued="true"/>
@@ -141,6 +140,7 @@
         <field name="lopAddress_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="asName_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="degreeTitles_en" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="subject_en" type="string" indexed="false" stored="false" multiValued="true"/>
 
     </fields>
 
@@ -151,48 +151,54 @@
     <copyField source="lopHomeplace" dest="textBoost_fi"/>
     <copyField source="qualification_fi" dest="textBoost_fi"/>
     <copyField source="name_fi" dest="textBoost_fi"/>
-	<copyField source="childName_fi" dest="textBoost_fi"/>
+    <copyField source="childName_fi" dest="textBoost_fi"/>
     <copyField source="professionalTitles_fi" dest="textBoost_fi"/>
+    <copyField source="subject_fi" dest="textBoost_fi"/>
     <copyField source="goals_fi" dest="text_fi_whole"/>
     <copyField source="content_fi" dest="text_fi_whole"/>
     <copyField source="lopName_fi" dest="textBoost_fi_whole"/>
     <copyField source="lopHomeplace" dest="textBoost_fi_whole"/>
     <copyField source="qualification_fi" dest="textBoost_fi_whole"/>
     <copyField source="name_fi" dest="textBoost_fi_whole"/>
-	<copyField source="childName_fi" dest="textBoost_fi_whole"/>
+    <copyField source="childName_fi" dest="textBoost_fi_whole"/>
     <copyField source="professionalTitles_fi" dest="textBoost_fi_whole"/>
+    <copyField source="subject_fi" dest="textBoost_fi_whole"/>
 
     <copyField source="aoName_sv" dest="text_sv"/>
     <copyField source="lopName_sv" dest="textBoost_sv"/>
     <copyField source="lopHomeplace" dest="textBoost_sv"/>
     <copyField source="qualification_sv" dest="textBoost_sv"/>
     <copyField source="name_sv" dest="textBoost_sv"/>
-	<copyField source="childName_sv" dest="textBoost_sv"/>
+    <copyField source="childName_sv" dest="textBoost_sv"/>
     <copyField source="professionalTitles_sv" dest="textBoost_sv"/>
+    <copyField source="subject_sv" dest="textBoost_sv"/>
     <copyField source="goals_sv" dest="text_sv_whole"/>
     <copyField source="content_sv" dest="text_sv_whole"/>
     <copyField source="lopName_sv" dest="textBoost_sv_whole"/>
     <copyField source="lopHomeplace" dest="textBoost_sv_whole"/>
     <copyField source="qualification_sv" dest="textBoost_sv_whole"/>
     <copyField source="name_sv" dest="textBoost_sv_whole"/>
-	<copyField source="childName_sv" dest="textBoost_sv_whole"/>
+    <copyField source="childName_sv" dest="textBoost_sv_whole"/>
     <copyField source="professionalTitles_sv" dest="textBoost_sv_whole"/>
+    <copyField source="subject_sv" dest="textBoost_sv_whole"/>
 
     <copyField source="aoName_en" dest="text_en"/>
     <copyField source="lopName_en" dest="textBoost_en"/>
     <copyField source="lopHomeplace" dest="textBoost_en"/>
     <copyField source="qualification_en" dest="textBoost_en"/>
     <copyField source="name_en" dest="textBoost_en"/>
-	<copyField source="childName_en" dest="textBoost_en"/>
+    <copyField source="childName_en" dest="textBoost_en"/>
     <copyField source="professionalTitles_en" dest="textBoost_en"/>
+    <copyField source="subject_en" dest="textBoost_en"/>
     <copyField source="goals_en" dest="text_en_whole"/>
     <copyField source="content_en" dest="text_en_whole"/>
     <copyField source="lopName_en" dest="textBoost_en_whole"/>
     <copyField source="lopHomeplace" dest="textBoost_en_whole"/>
     <copyField source="qualification_en" dest="textBoost_en_whole"/>
     <copyField source="name_en" dest="textBoost_en_whole"/>
-	<copyField source="childName_en" dest="textBoost_en_whole"/>
+    <copyField source="childName_en" dest="textBoost_en_whole"/>
     <copyField source="professionalTitles_en" dest="textBoost_en_whole"/>
+    <copyField source="subject_en" dest="textBoost_en_whole"/>
 
     <copyField source="asName_fi" dest="asNames"/>
     <copyField source="asName_sv" dest="asNames"/>
@@ -201,25 +207,28 @@
     <copyField source="lopName_fi" dest="lopNames"/>
     <copyField source="lopName_sv" dest="lopNames"/>
     <copyField source="lopName_en" dest="lopNames"/>
-	
-	<copyField source="name_fi" dest="name_auto_fi"/>
+    
+    <copyField source="name_fi" dest="name_auto_fi"/>
     <copyField source="lopName_fi" dest="free_auto_fi"/>
     <copyField source="lopHomeplace" dest="free_auto_fi"/>
     <copyField source="qualification_fi" dest="free_auto_fi"/>
     <copyField source="professionalTitles_fi" dest="free_auto_fi"/>
-	
-	<copyField source="name_sv" dest="name_auto_sv"/>
-	<copyField source="lopName_sv" dest="free_auto_sv"/>
+    <copyField source="subject_fi" dest="free_auto_fi"/>
+    
+    <copyField source="name_sv" dest="name_auto_sv"/>
+    <copyField source="lopName_sv" dest="free_auto_sv"/>
     <copyField source="lopHomeplace" dest="free_auto_sv"/>
     <copyField source="qualification_sv" dest="free_auto_sv"/>
     <copyField source="professionalTitles_sv" dest="free_auto_sv"/>
-	
-	<copyField source="name_en" dest="name_auto_en"/>
-	<copyField source="lopName_en" dest="free_auto_en"/>
+    <copyField source="subject_sv" dest="free_auto_sv"/>
+    
+    <copyField source="name_en" dest="name_auto_en"/>
+    <copyField source="lopName_en" dest="free_auto_en"/>
     <copyField source="lopHomeplace" dest="free_auto_en"/>
     <copyField source="qualification_en" dest="free_auto_en"/>
     <copyField source="professionalTitles_en" dest="free_auto_en"/>
-	
+    <copyField source="subject_en" dest="free_auto_en"/>
+    
     <types>
 
         <!-- Finnish -->
@@ -238,9 +247,9 @@
                 <filter class="solr.LowerCaseFilterFactory"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
                         enablePositionIncrements="true"/>
                  <filter class="fi.nationallibrary.ndl.solrvoikko.VoikkoFilterFactory" separateTokens="false" />
             </analyzer>
@@ -261,9 +270,9 @@
                 <filter class="solr.LowerCaseFilterFactory"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
                         enablePositionIncrements="true"/>
                  <filter class="fi.nationallibrary.ndl.solrvoikko.VoikkoFilterFactory" separateTokens="false" />
             </analyzer>
@@ -283,9 +292,9 @@
             <analyzer type="query">
                 <tokenizer class="solr.StandardTokenizerFactory"/>
                 <filter class="solr.LowerCaseFilterFactory"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
                         enablePositionIncrements="true"/>
                 <filter class="solr.SnowballPorterFilterFactory" language="Swedish"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
@@ -306,9 +315,9 @@
             <analyzer type="query">
                 <tokenizer class="solr.StandardTokenizerFactory"/>
                 <filter class="solr.LowerCaseFilterFactory"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
                         enablePositionIncrements="true"/>
                 <filter class="solr.SnowballPorterFilterFactory" language="Swedish"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
@@ -353,7 +362,7 @@ analyzers to leave a 'gap' for more accurate phrase queries.
                         words="lang/stopwords_en.txt"
                         enablePositionIncrements="true"
                         />
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
                 <filter class="solr.LowerCaseFilterFactory"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
@@ -398,7 +407,7 @@ analyzers to leave a 'gap' for more accurate phrase queries.
                         words="lang/stopwords_en.txt"
                         enablePositionIncrements="true"
                         />
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
                 <filter class="solr.LowerCaseFilterFactory"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
@@ -419,7 +428,7 @@ analyzers to leave a 'gap' for more accurate phrase queries.
                                 
             </analyzer>
         </fieldType>
-                
+             
         <!-- lowercases the entire field value and removes stop words-->
         <fieldType name="lowercase_stopwords" class="solr.TextField" positionIncrementGap="100">
             <analyzer>
@@ -427,9 +436,9 @@ analyzers to leave a 'gap' for more accurate phrase queries.
                 <filter class="solr.LowerCaseFilterFactory"/>
                 <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt" format="snowball"
                         enablePositionIncrements="true"/>
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" format="snowball"
                         enablePositionIncrements="true"/>
             </analyzer>
         </fieldType>

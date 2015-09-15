@@ -26,6 +26,7 @@
         <field name="id" type="string" indexed="true" stored="true" multiValued="false"/>
         <field name="type" type="string" indexed="true" stored="true" multiValued="false"/>
         <field name="lopId" type="string" indexed="true" stored="true" multiValued="true"/>
+        <field name="asId" type="string" indexed="true" stored="true" multiValued="true"/>
         <field name="parentId" type="string" indexed="false" stored="true" multiValued="false"/>
         <field name="losId" type="string" indexed="false" stored="true" multiValued="false"/>
 

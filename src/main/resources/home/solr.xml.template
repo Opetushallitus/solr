@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true">
+    <cores adminPath="/admin/cores" hostPort="{{ solr_port }}" hostContext="solr">
+        <core loadOnStartup="true" instanceDir="../collections/virkailija/virkailija0/" transient="false" name="organisaatiot" config="solrconfig-organisaatiot.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/virkailija/virkailija0/" transient="false" name="koulutukset" config="solrconfig-tarjonta-koulutukset.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/virkailija/virkailija0/" transient="false" name="hakukohteet" config="solrconfig-tarjonta-hakukohteet.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/oppija/provider/" transient="false" name="provider" config="solrconfig.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/oppija/learning_opportunity/" transient="false" name="learning_opportunity_update" config="solrconfig.update.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/oppija/learning_opportunity/" transient="false" name="learning_opportunity" config="solrconfig.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/oppija/provider/" transient="false" name="provider_update" config="solrconfig.update.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/oppija/location/" transient="false name="location_update" config="solrconfig.update.xml"/>
+        <core loadOnStartup="true" instanceDir="../collections/oppija/location/" transient="false" name="location" config="solrconfig.xml"/>
+    </cores>
+</solr>

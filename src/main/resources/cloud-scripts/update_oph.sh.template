@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+ZKCLI=${DIR}/zkcli.sh
+
+$ZKCLI -cmd upconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -confdir ${DIR}/../collections/virkailija/virkailija0/conf/ -confname virkailija -solrhome ${DIR}/../home
+$ZKCLI -cmd upconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -confdir ${DIR}/../collections/oppija/learning_opportunity/conf -confname learning_opportunity -solrhome ${DIR}/../home
+$ZKCLI -cmd upconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -confdir ${DIR}/../collections/oppija/provider/conf/ -confname provider -solrhome ${DIR}/../home
+$ZKCLI -cmd upconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -confdir ${DIR}/../collections/oppija/location/conf/ -confname location -solrhome ${DIR}/../home
+
+$ZKCLI -cmd linkconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -collection organisaatiot -confname virkailija -solrhome ${DIR}/../home
+$ZKCLI -cmd linkconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -collection hakukohteet -confname virkailija -solrhome ${DIR}/../home
+$ZKCLI -cmd linkconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -collection koulutukset -confname virkailija -solrhome ${DIR}/../home
+$ZKCLI -cmd linkconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -collection learning_opportunity_update -confname learning_opportunity -solrhome ${DIR}/../home
+$ZKCLI -cmd linkconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -collection provider_update -confname provider -solrhome ${DIR}/../home
+$ZKCLI -cmd linkconfig -zkhost {{ hostvars[groups[minion_group_name][0]]['ansible_default_ipv4']['address'] }}:{{ zookeeper_port}} -collection location_update -confname location -solrhome ${DIR}/../home
+
+echo "OPH SolrCloud configuration updated!"

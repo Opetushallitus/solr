@@ -29,14 +29,15 @@
         <field name="asId" type="string" indexed="true" stored="true" multiValued="true"/>
         <field name="parentId" type="string" indexed="false" stored="true" multiValued="false"/>
         <field name="losId" type="string" indexed="false" stored="true" multiValued="false"/>
-
+        
         <!-- Field for stored string values (e.g. credits_ss) -->
         <dynamicField name="*_ss" type="string" indexed="false" stored="true" multiValued="false"/>
 
         <dynamicField name="asStart_*"  type="date"  indexed="true"  stored="true"/>
         <dynamicField name="asEnd_*"  type="date"  indexed="true"  stored="true"/>
-        <field name="isVarsinainen" type="boolean" indexed="false" stored="true" multiValued="false"/>
         
+        <field name="isVarsinainen" type="boolean" indexed="false" stored="true" multiValued="false"/>
+
         <!-- Fields for faceting -->
         <dynamicField name="*_ffm" type="string" indexed="true" stored="false" multiValued="true"/>
         <dynamicField name="*_fname" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -104,6 +105,7 @@
         <!-- ammattinimike -->
         <field name="professionalTitles_fi" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="lopName_fi" type="string" indexed="false" stored="false" multiValued="true"/>
+	<field name="responsibleProvider_fi" type="string" indexed="false" stored="true" multiValued="false"/>
         <!-- oppilaitoksen kuvaus -->
         <field name="lopDescription_fi" type="string" indexed="false" stored="false" multiValued="true"/>
         <!-- oppilaitoksen yhteystiedot -->
@@ -113,7 +115,7 @@
         <!-- tutkintonimike -->
         <field name="degreeTitles_fi" type="string" indexed="false" stored="false" multiValued="true"/>
 
-        <field name="subject_fi" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="subject_fi" type="string" indexed="true" stored="true" multiValued="true"/>
 
         <field name="name_sv" type="string" indexed="false" stored="false" multiValued="false"/>
         <field name="childName_sv" type="string" indexed="false" stored="false" multiValued="true"/>
@@ -123,11 +125,12 @@
         <field name="content_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="professionalTitles_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="lopName_sv" type="string" indexed="false" stored="false" multiValued="true"/>
+	<field name="responsibleProvider_sv" type="string" indexed="false" stored="true" multiValued="false"/>
         <field name="lopDescription_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="lopAddress_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="asName_sv" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="degreeTitles_sv" type="string" indexed="false" stored="false" multiValued="true"/>
-        <field name="subject_sv" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="subject_sv" type="string" indexed="true" stored="true" multiValued="true"/>
 
         <field name="name_en" type="string" indexed="false" stored="false" multiValued="false"/>
         <field name="childName_en" type="string" indexed="false" stored="false" multiValued="true"/>
@@ -137,11 +140,12 @@
         <field name="content_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="professionalTitles_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="lopName_en" type="string" indexed="false" stored="false" multiValued="true"/>
+	<field name="responsibleProvider_en" type="string" indexed="false" stored="true" multiValued="false"/>
         <field name="lopDescription_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="lopAddress_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="asName_en" type="string" indexed="false" stored="false" multiValued="true"/>
         <field name="degreeTitles_en" type="string" indexed="false" stored="false" multiValued="true"/>
-        <field name="subject_en" type="string" indexed="false" stored="false" multiValued="true"/>
+        <field name="subject_en" type="string" indexed="true" stored="true" multiValued="true"/>
 
     </fields>
 
@@ -149,6 +153,7 @@
 
     <copyField source="aoName_fi" dest="text_fi"/>
     <copyField source="lopName_fi" dest="textBoost_fi"/>
+    <copyField source="responsibleProvider_fi" dest="text_fi"/>
     <copyField source="lopHomeplace" dest="textBoost_fi"/>
     <copyField source="qualification_fi" dest="textBoost_fi"/>
     <copyField source="name_fi" dest="textBoost_fi"/>
@@ -167,6 +172,7 @@
 
     <copyField source="aoName_sv" dest="text_sv"/>
     <copyField source="lopName_sv" dest="textBoost_sv"/>
+    <copyField source="responsibleProvider_sv" dest="text_sv"/>
     <copyField source="lopHomeplace" dest="textBoost_sv"/>
     <copyField source="qualification_sv" dest="textBoost_sv"/>
     <copyField source="name_sv" dest="textBoost_sv"/>
@@ -185,6 +191,7 @@
 
     <copyField source="aoName_en" dest="text_en"/>
     <copyField source="lopName_en" dest="textBoost_en"/>
+    <copyField source="responsibleProvider_en" dest="text_en"/>
     <copyField source="lopHomeplace" dest="textBoost_en"/>
     <copyField source="qualification_en" dest="textBoost_en"/>
     <copyField source="name_en" dest="textBoost_en"/>

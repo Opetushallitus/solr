@@ -154,7 +154,7 @@
     <copyField source="aoName_fi" dest="text_fi"/>
     <copyField source="lopName_fi" dest="textBoost_fi"/>
     <copyField source="responsibleProvider_fi" dest="text_fi"/>
-    <copyField source="lopHomeplace" dest="textBoost_fi"/>
+    <copyField source="lopHomeplace" dest="text_fi"/>
     <copyField source="qualification_fi" dest="textBoost_fi"/>
     <copyField source="name_fi" dest="textBoost_fi"/>
     <copyField source="childName_fi" dest="textBoost_fi"/>
@@ -163,7 +163,7 @@
     <copyField source="goals_fi" dest="text_fi_whole"/>
     <copyField source="content_fi" dest="text_fi_whole"/>
     <copyField source="lopName_fi" dest="textBoost_fi_whole"/>
-    <copyField source="lopHomeplace" dest="textBoost_fi_whole"/>
+    <copyField source="lopHomeplace" dest="text_fi_whole"/>
     <copyField source="qualification_fi" dest="textBoost_fi_whole"/>
     <copyField source="name_fi" dest="textBoost_fi_whole"/>
     <copyField source="childName_fi" dest="textBoost_fi_whole"/>
@@ -173,7 +173,7 @@
     <copyField source="aoName_sv" dest="text_sv"/>
     <copyField source="lopName_sv" dest="textBoost_sv"/>
     <copyField source="responsibleProvider_sv" dest="text_sv"/>
-    <copyField source="lopHomeplace" dest="textBoost_sv"/>
+    <copyField source="lopHomeplace" dest="text_sv"/>
     <copyField source="qualification_sv" dest="textBoost_sv"/>
     <copyField source="name_sv" dest="textBoost_sv"/>
     <copyField source="childName_sv" dest="textBoost_sv"/>
@@ -182,7 +182,7 @@
     <copyField source="goals_sv" dest="text_sv_whole"/>
     <copyField source="content_sv" dest="text_sv_whole"/>
     <copyField source="lopName_sv" dest="textBoost_sv_whole"/>
-    <copyField source="lopHomeplace" dest="textBoost_sv_whole"/>
+    <copyField source="lopHomeplace" dest="text_sv_whole"/>
     <copyField source="qualification_sv" dest="textBoost_sv_whole"/>
     <copyField source="name_sv" dest="textBoost_sv_whole"/>
     <copyField source="childName_sv" dest="textBoost_sv_whole"/>
@@ -192,7 +192,7 @@
     <copyField source="aoName_en" dest="text_en"/>
     <copyField source="lopName_en" dest="textBoost_en"/>
     <copyField source="responsibleProvider_en" dest="text_en"/>
-    <copyField source="lopHomeplace" dest="textBoost_en"/>
+    <copyField source="lopHomeplace" dest="text_en"/>
     <copyField source="qualification_en" dest="textBoost_en"/>
     <copyField source="name_en" dest="textBoost_en"/>
     <copyField source="childName_en" dest="textBoost_en"/>
@@ -201,7 +201,7 @@
     <copyField source="goals_en" dest="text_en_whole"/>
     <copyField source="content_en" dest="text_en_whole"/>
     <copyField source="lopName_en" dest="textBoost_en_whole"/>
-    <copyField source="lopHomeplace" dest="textBoost_en_whole"/>
+    <copyField source="lopHomeplace" dest="text_en_whole"/>
     <copyField source="qualification_en" dest="textBoost_en_whole"/>
     <copyField source="name_en" dest="textBoost_en_whole"/>
     <copyField source="childName_en" dest="textBoost_en_whole"/>

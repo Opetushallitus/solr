@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+JVM="/usr/bin/java"
+sdir="`dirname \"$0\"`"
+slib="{{ tomcat_home }}/webapps/solr/WEB-INF/"
+classpath="$slib/lib/*:/tmp/WEB-INF/lib/*"
+
+$JVM -Dlog4j.configuration=file:$sdir/log4j.properties -classpath "$classpath" org.apache.solr.cloud.ZkCLI ${1+"$@"}

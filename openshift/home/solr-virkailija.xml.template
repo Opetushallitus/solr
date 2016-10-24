@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true">
+    <cores adminPath="/admin/cores" hostPort="{{ cluster_solr_port }}" hostContext="solr">
+        <core config="solrconfig-tarjonta-hakukohteet.xml" name="hakukohteet" loadOnStartup="true" instanceDir="../collections/virkailija/virkailija0/" transient="false"/>
+        <core config="solrconfig-tarjonta-koulutukset.xml" name="koulutukset" loadOnStartup="true" instanceDir="../collections/virkailija/virkailija0/" transient="false"/>
+        <core config="solrconfig-organisaatiot.xml" name="organisaatiot" loadOnStartup="true" instanceDir="../collections/virkailija/virkailija0/" transient="false"/>
+    </cores>
+</solr>

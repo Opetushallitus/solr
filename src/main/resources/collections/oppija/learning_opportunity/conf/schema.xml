@@ -37,6 +37,7 @@
         <dynamicField name="asEnd_*"  type="date"  indexed="true"  stored="true"/>
         
         <field name="isVarsinainen" type="boolean" indexed="false" stored="true" multiValued="false"/>
+        <field name="ataruFormKey" type="string" indexed="false" stored="true" multiValued="false"/>
 
         <!-- Fields for faceting -->
         <dynamicField name="*_ffm" type="string" indexed="true" stored="false" multiValued="true"/>

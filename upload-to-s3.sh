@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-aws s3 cp target/*.war s3://oph-solr/ --profile oph-opintopolku-session
+aws s3 cp target/*.war s3://oph-solr/ --profile oph-opintopolku-session-dev

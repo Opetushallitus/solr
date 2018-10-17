@@ -1,0 +1,13 @@
+sudo: required
+
+language: java
+
+jdk:
+- oraclejdk8
+
+cache:
+  directories:
+  - $HOME/.m2
+
+script:
+- mvn clean package -B -Dbranch=${TRAVIS_BRANCH} -Drevision=${TRAVIS_COMMIT} -DbuildNumber=${TRAVIS_BUILD_NUMBER} -Dbuild=${TRAVIS_BUILD_NUMBER}

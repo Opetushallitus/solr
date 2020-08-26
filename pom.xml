@@ -21,7 +21,7 @@
 		<solr.version>4.6.0</solr.version>
 		<libvoikko.version>3.6.1</libvoikko.version>
 		<solrvoikko.version>oph-solr4.5.1</solrvoikko.version>
-		<jna.version>4.0.0</jna.version>
+		<jna.version>4.5.2</jna.version>
 		<slf4j.version>1.6.6</slf4j.version><!-- solr lib\ext -->
 		<log4j.version>1.2.16</log4j.version><!-- solr lib\ext -->
 	</properties>
